@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nova</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Tailwind v3 CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ----------------------- -->
+    <!-- HEADER Section -->
+    <!-- ----------------------- -->
+    <nav class="w-full">
+      <div
+        class="max-w-7xl mx-auto px-6 py-2 flex items-center justify-between"
+      >
+        <!-- Logo Section -->
+        <div class="flex items-center space-x-2">
+          <div class="text-2xl font-bold text-blue-400 tracking-wider">
+            <img src="logo.png" alt="logo" />
+          </div>
+        </div>
+
+        <!-- Hamburger Icon for Mobile -->
+        <div class="lg:hidden" onclick="toggleMenu()">
+          <svg
+            id="menu-icon"
+            class="text-blue-400"
+            width="30"
+            height="30"
+            fill="currentColor"
+            viewBox="0 0 512 512"
+          >
+            <path
+              d="M64 128h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H64c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 160h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H64c-17.7 0-32-14.3-32-32s14.3-32 32-32zm0 160h384c17.7 0 32 14.3 32 32s-14.3 32-32 32H64c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+            />
+          </svg>
+        </div>
+
+        <!-- Menu for Desktop -->
+        <ul
+          class="hidden lg:flex items-center space-x-8 text-sm font-medium text-sky-800"
+        >
+          <li class="hover:text-blue-900 cursor-pointer">HOME</li>
+          <li
+            class="flex items-center space-x-1 cursor-pointer hover:text-blue-900"
+          >
+            <span>ABOUT US</span>
+            <span class="mt-3">
+              <svg
+                class="text-sky-800"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 1L8 5L12 1" />
+              </svg>
+            </span>
+          </li>
+          <li class="hover:text-blue-900 cursor-pointer">OUR TEAM</li>
+          <li
+            class="flex items-center space-x-1 cursor-pointer hover:text-blue-900"
+          >
+            <span><a href="/Listing.html">PRODUCTS</a></span>
+            <span class="mt-3">
+              <svg
+                class="text-sky-800"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 1L8 5L12 1" />
+              </svg>
+            </span>
+          </li>
+          <li class="hover:text-blue-900 cursor-pointer">BUSINESS</li>
+          <li
+            class="flex items-center space-x-1 cursor-pointer hover:text-blue-900"
+          >
+            <span>NEWS & EVENTS</span>
+            <span class="mt-3">
+              <svg
+                class="text-sky-800"
+                width="18"
+                height="18"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 16 16"
+              >
+                <path d="M4 1L8 5L12 1" />
+              </svg>
+            </span>
+          </li>
+          <li class="hover:text-blue-900 cursor-pointer">CAREERS</li>
+          <li class="hover:text-blue-900 cursor-pointer">CONTACT US</li>
+        </ul>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="absolute top-0 left-0 w-full h-full bg-blue-600 bg-opacity-90 z-10 transform -translate-x-full transition-transform duration-300 ease-in-out"
+      >
+        <ul
+          class="flex flex-col items-center justify-center h-full text-white text-lg space-y-6"
+        >
+          <li><a href="/home" class="hover:text-gray-300">Home</a></li>
+          <li><a href="/about-us" class="hover:text-gray-300">About Us</a></li>
+          <li><a href="/our-team" class="hover:text-gray-300">Our Team</a></li>
+          <li><a href="/products" class="hover:text-gray-300">Products</a></li>
+          <li><a href="/business" class="hover:text-gray-300">Business</a></li>
+          <li>
+            <a href="/news-events" class="hover:text-gray-300">News & Events</a>
+          </li>
+          <li><a href="/careers" class="hover:text-gray-300">Careers</a></li>
+          <li>
+            <a href="/contact-us" class="hover:text-gray-300">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ----------------------- -->
+    <!-- VIEW Section -->
+    <!-- ----------------------- -->
+    <!-- Hero Slider -->
+    <div class="w-full px-4 mt-3">
+      <div
+        id="hero-section"
+        class="relative h-[260px] sm:h-[320px] md:h-[420px] rounded-2xl overflow-hidden flex items-center"
+      >
+        <!-- Overlay (optional for readability) -->
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <!-- Content -->
+        <div
+          class="relative z-10 max-w-[85%] sm:max-w-md text-white px-4 sm:px-6"
+        >
+          <h1
+            class="text-xl sm:text-2xl md:text-3xl font-semibold leading-tight"
+          >
+            Introduced 100+ Molecules for the First time in India
+          </h1>
+
+          <div class="mt-3 flex flex-row gap-3">
+            <button
+              class="bg-white text-black px-4 py-1.5 text-xs sm:text-sm rounded"
+            >
+              Explore Products
+            </button>
+
+            <button
+              class="border border-white px-4 py-1.5 text-xs sm:text-sm rounded text-white"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dots -->
+      <div class="flex justify-center mt-2" id="dots-container"></div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="py-8">
+      <div class="max-w-screen-xl mx-auto px-4 bg-[#D8EDFF]">
+        <!-- Container -->
+        <div class="rounded-2xl overflow-hidden">
+          <!-- Wrapper -->
+          <div class="flex flex-wrap md:flex-nowrap">
+            <!-- Item -->
+            <div
+              class="w-1/2 md:w-1/4 flex items-center gap-3 px-6 py-6 border-b md:border-b-0 md:border-r border-sky-200"
+            >
+              <img src="molecule.png" class="w-18 h-18" />
+              <div>
+                <h3 class="text-sky-800 font-semibold text-2xl leading-none">
+                  100+
+                </h3>
+                <p class="text-sky-700 text-sm">Molecules</p>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div
+              class="w-1/2 md:w-1/4 flex items-center gap-3 px-6 py-6 border-b md:border-b-0 md:border-r border-sky-200"
+            >
+              <img src="hand.png" class="w-18 h-18" />
+              <div>
+                <h3 class="text-sky-800 font-semibold text-2xl leading-none">
+                  75+
+                </h3>
+                <p class="text-sky-700 text-sm">Years of Legacy</p>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div
+              class="w-1/2 md:w-1/4 flex items-center gap-3 px-6 py-6 border-r md:border-r border-sky-200"
+            >
+              <img src="office.png" class="w-18 h-18" />
+              <div>
+                <h3 class="text-sky-800 font-semibold text-2xl leading-none">
+                  1000+
+                </h3>
+                <p class="text-sky-700 text-sm">Distribution Points</p>
+              </div>
+            </div>
+
+            <!-- Item -->
+            <div class="w-1/2 md:w-1/4 flex items-center gap-3 px-6 py-6">
+              <img src="location.png" class="w-18 h-18" />
+              <div>
+                <h3 class="text-sky-800 font-semibold text-2xl leading-none">
+                  Pan India
+                </h3>
+                <p class="text-sky-700 text-sm">Presence</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Div Grid Section -->
+    <div class="py-10">
+      <div class="mx-auto px-4">
+        <h2
+          class="text-2xl md:text-3xl text-sky-800 font-semibold mb-8 md:mb-10 ml-2 md:ml-6"
+        >
+          Divisions
+        </h2>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-2 gap-6 md:gap-8 px-2 md:px-12"
+        >
+          <!-- Card -->
+          <div
+            class="flex flex-col lg:flex-row items-center bg-white shadow-lg p-4 md:p-6 gap-6 md:gap-10"
+          >
+            <img
+              src="icon1.png"
+              alt="Kavach"
+              class="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 object-contain"
+            />
+
+            <div
+              class="flex flex-col items-center lg:items-start text-center sm:text-left w-full"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold mb-1">Kavach</h3>
+              <p class="text-sm md:text-base mb-3 text-gray-600">
+                Healthcare Solutions
+              </p>
+
+              <button
+                class="bg-gradient-to-r from-[#0F62AC] to-[#062846] text-white w-full sm:w-auto px-6 md:px-10 h-10 rounded-md hover:opacity-90 transition-all whitespace-nowrap"
+              >
+                Explore More
+              </button>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg p-4 md:p-6 gap-6 md:gap-10"
+          >
+            <img
+              src="icon2.png"
+              alt="NCC"
+              class="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 object-contain"
+            />
+
+            <div
+              class="flex flex-col items-center lg:items-start text-center sm:text-left w-full"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold mb-1">NCC</h3>
+              <p class="text-sm md:text-base mb-3 text-gray-600">
+                Clinical Care
+              </p>
+
+              <button
+                class="bg-gradient-to-r from-[#0F62AC] to-[#062846] text-white w-full sm:w-auto px-6 md:px-10 h-10 rounded-md hover:opacity-90 transition-all whitespace-nowrap"
+              >
+                Explore More
+              </button>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg p-4 md:p-6 gap-6 md:gap-10"
+          >
+            <img
+              src="icon3.png"
+              alt="Rakshak"
+              class="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 object-contain"
+            />
+
+            <div
+              class="flex flex-col items-center lg:items-start text-center sm:text-left w-full"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold mb-1">Rakshak</h3>
+              <p class="text-sm md:text-base mb-3 text-gray-600">
+                Specialty Medicines
+              </p>
+
+              <button
+                class="bg-gradient-to-r from-[#0F62AC] to-[#062846] text-white w-full sm:w-auto px-6 md:px-10 h-10 rounded-md hover:opacity-90 transition-all whitespace-nowrap"
+              >
+                Explore More
+              </button>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div
+            class="flex flex-col lg:flex-row items-center bg-white shadow-lg rounded-lg p-4 md:p-6 gap-6 md:gap-10"
+          >
+            <img
+              src="icon4.png"
+              alt="Dhara"
+              class="w-28 h-28 sm:w-40 sm:h-40 md:w-52 md:h-52 object-contain"
+            />
+
+            <div
+              class="flex flex-col items-center lg:items-start text-center sm:text-left w-full"
+            >
+              <h3 class="text-xl md:text-2xl font-semibold mb-1">Dhara</h3>
+              <p class="text-sm md:text-base mb-3 text-gray-600">
+                General Health
+              </p>
+
+              <button
+                class="bg-gradient-to-r from-[#0F62AC] to-[#062846] text-white w-full sm:w-auto px-6 md:px-10 h-10 rounded-md hover:opacity-90 transition-all whitespace-nowrap"
+              >
+                Explore More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="bg-gradient-to-r from-[#0F62AC] to-[#062846] text-white">
+      <div
+        class="max-w-screen-xl flex flex-col md:flex-row items-center px-4 md:px-0"
+      >
+        <div class="w-full md:w-1/2">
+          <img
+            src="aboutimg.png"
+            alt="Research"
+            class="w-full h-auto object-cover shadow-lg"
+          />
+        </div>
+
+        <div class="w-full md:w-1/2 md:pl-16 mt-8 md:mt-0">
+          <h2 class="text-4xl font-semibold mb-4">About Us</h2>
+          <p class="text-lg mb-6">
+            Novo Medi Science has been a trusted name in healthcare for over 75
+            years, pioneering in Vaccines, Critical Care, and specialty
+            Medicines. We are dedicated to innovation and excellence,
+            contributing to the global pharma growth.
+          </p>
+
+          <button
+            class="bg-white text-blue-800 py-2 px-8 rounded-md text-lg font-semibold hover:bg-gray-100 transition-all"
+          >
+            Learn More
+          </button>
+
+          <div class="mt-8 flex flex-wrap justify-start space-x-6">
+            <div class="flex items-center space-x-2 mb-4">
+              <img
+                src="abouticon3.png"
+                alt="Vaccine Icon"
+                class="object-cover shadow-lg h-[100px] md:h-[90px] lg:h-[100px]"
+              />
+              <div class="bg-white rounded-full"></div>
+            </div>
+            <div class="flex items-center space-x-2 mb-4">
+              <img
+                src="abouticon2.png"
+                alt="Critical Care Icon"
+                class="object-cover shadow-lg h-[100px] md:h-[90px] lg:h-[100px]"
+              />
+              <div class="bg-white rounded-full"></div>
+            </div>
+            <div class="flex items-center space-x-2 mb-4">
+              <img
+                src="abouticon1.png"
+                alt="Global Presence Icon"
+                class="object-cover shadow-lg h-[100px] md:h-[90px] lg:h-[100px]"
+              />
+              <div class="bg-white rounded-full"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products, Testimonials, etc Page -->
+
+    <div class="mx-auto px-4 sm:px-6 py-10">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-semibold text-blue-700 mb-8">
+          Our Products
+        </h2>
+
+        <div
+          id="productsContainer"
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 mx-auto max-w-7xl place-items-center"
+        ></div>
+      </div>
+      <!-- Testimonials -->
+      <div class="mx-auto px-4 sm:px-6">
+    <h2 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-10">
+      Testimonials
+    </h2>
+
+    <!-- ROW 1 -->
+    <div class="overflow-hidden mb-6">
+      <div id="row1" class="flex gap-4 sm:gap-6 w-max animate-left" onmouseover="pauseAnimation('row1')" onmouseout="resumeAnimation('row1')"></div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="overflow-hidden">
+      <div id="row2" class="flex gap-4 sm:gap-6 w-max animate-right" onmouseover="pauseAnimation('row2')" onmouseout="resumeAnimation('row2')"></div>
+    </div>
+      </div>
+
+      <!-- Exhibition and events -->
+
+      <div class="mx-auto px-4 sm:px-6 py-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-10">
+          Exhibition & Events
+        </h2>
+
+        <div id="eventsWrapper" class="relative">
+          <div
+            id="eventsContainer"
+            class="flex gap-6 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+          ></div>
+        </div>
+      </div>
+
+      <!-- Blogs -->
+
+      <div class="mx-auto px-4 sm:px-6 py-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-blue-700 mb-10">
+          Blogs & News Room
+        </h2>
+
+        <div
+          id="blogsContainer"
+          class="flex gap-6 overflow-x-auto no-scrollbar cursor-grab active:cursor-grabbing"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------- -->
+    <!-- Footer Section -->
+    <!-- ---------------------------------- -->
+    <footer class="bg-blue-600 text-white py-12 h-auto">
+      <div class="mx-auto px-4 sm:px-16">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- First Column -->
+          <div class="flex flex-col">
+            <div class="flex items-center mb-4">
+              <img src="logow.png" alt="Novo Logo" class="w-32 sm:w-50" />
+            </div>
+            <p class="text-md mb-4">
+              Novo Medi Sciences is a trusted name in healthcare, delivering
+              high-quality formulations across vaccines, critical care, and
+              specialty medicines. With a legacy of over 75 years, we continue
+              to advance healthcare through innovation, reliability, and
+              excellence.
+            </p>
+            <div>
+              <span class="font-medium text-2xl block mb-2"
+                >Your Trusted Partner Since 1946:</span
+              >
+              <div class="flex space-x-4">
+                <a href="https://instagram.com" class="w-8 sm:w-10">
+                  <AiFillInstagram size="30" />
+                </a>
+                <a href="https://facebook.com" class="w-8 sm:w-10">
+                  <FaFacebook size="30" />
+                </a>
+                <a href="https://linkedin.com" class="w-8 sm:w-10">
+                  <FaLinkedin size="30" />
+                </a>
+                <a href="https://youtube.com" class="w-8 sm:w-10">
+                  <FaYoutube size="30" />
+                </a>
+                <a href="https://x.com" class="w-8 sm:w-10">
+                  <FaXTwitter size="30" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links Column -->
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold">Quick Links</h3>
+            <div class="w-20 h-1 bg-white mt-2 rounded"></div>
+            <ul class="mt-4 space-y-2">
+              <li>
+                <a href="/about-us" class="hover:text-gray-300">About Us</a>
+              </li>
+              <li>
+                <a href="/business" class="hover:text-gray-300">Business</a>
+              </li>
+              <li>
+                <a href="/careers" class="hover:text-gray-300">Careers</a>
+              </li>
+              <li>
+                <a href="/contact-us" class="hover:text-gray-300">Contact Us</a>
+              </li>
+              <li>
+                <a href="/terms-conditions" class="hover:text-gray-300"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="/privacy-policy" class="hover:text-gray-300"
+                  >Privacy & Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Divisions Column -->
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold">Divisions</h3>
+            <div class="w-18 h-1 bg-white mt-2 rounded"></div>
+            <ul class="mt-4 space-y-2">
+              <li><a href="/kavach" class="hover:text-gray-300">Kavach</a></li>
+              <li><a href="/ncc" class="hover:text-gray-300">NCC</a></li>
+              <li>
+                <a href="/rakshak" class="hover:text-gray-300">Rakshak</a>
+              </li>
+              <li><a href="/dhara" class="hover:text-gray-300">Dhara</a></li>
+            </ul>
+          </div>
+
+          <!-- Address and Contact Column -->
+          <div class="flex flex-col">
+            <h3 class="text-lg font-semibold">Novo Medi Sciences Pvt Ltd.</h3>
+            <div class="w-62 h-1 bg-white mt-2 rounded"></div>
+            <p class="mt-2 text-md">
+              <span class="font-bold">Address:</span> 1301-1305, 13th Floor,
+              Commercial Wing-A, The Epicentre, W.T.Patil Marg. Borla Village,
+              Near Shivaji Chowk, Chembur East-400071.
+            </p>
+            <p class="mt-2 text-sm">
+              <span class="font-bold">Phone:</span> +91 22 43426100
+            </p>
+            <p class="mt-2 text-sm">
+              <span class="font-bold">Email:</span>
+              <a
+                href="mailto:info@novomedi.com"
+                class="text-white hover:text-gray-300"
+                >info@novomedi.com</a
+              >
+            </p>
+            <p class="mt-2 text-sm">
+              <a
+                href="/report-adverse-event"
+                class="text-white hover:text-gray-300"
+                >Report Adverse Event</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        const menuIcon = document.getElementById("menu-icon");
+        if (menu.style.transform === "translateX(0%)") {
+          menu.style.transform = "translateX(-100%)"; // Close menu
+          menuIcon.style.transform = "rotate(0deg)";
+        } else {
+          menu.style.transform = "translateX(0%)"; // Open menu
+          menuIcon.style.transform = "rotate(90deg)"; // Rotate icon when open
+        }
+      }
+
+      <!-- JavaScript for Hero Section -->
+      const images = ["hero.png", "hero.png", "hero.png"];
+      let currentImageIndex = 0; // Default to the first image
+      const heroSection = document.getElementById("hero-section");
+      const dotsContainer = document.getElementById("dots-container");
+
+      // Function to update the background image
+      function updateHeroImage() {
+        heroSection.style.backgroundImage = `url(${images[currentImageIndex]})`;
+      }
+
+      // Handle dot click to jump to a specific image
+      function handleDotClick(index) {
+        currentImageIndex = index;
+        updateHeroImage();
+        updateDots();
+      }
+
+      // Update dot styles based on the current image index
+      function updateDots() {
+        const dots = dotsContainer.querySelectorAll("button");
+        dots.forEach((dot, index) => {
+          dot.classList.remove("active-dot", "inactive-dot");
+          if (index === currentImageIndex) {
+            dot.classList.add("active-dot");
+          } else {
+            dot.classList.add("inactive-dot");
+          }
+        });
+      }
+
+      // Create dots dynamically based on the images array
+      images.forEach((_, index) => {
+        const dot = document.createElement("button");
+        dot.classList.add(
+          "w-3",
+          "h-3",
+          "mx-2",
+          "rounded-full",
+          "inactive-dot",
+          "transition-all",
+        );
+        dot.onclick = () => handleDotClick(index);
+        dotsContainer.appendChild(dot);
+      });
+
+      // Auto-slider functionality (change background image every 1 second)
+      setInterval(() => {
+        currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
+        updateHeroImage();
+        updateDots();
+      }, 1000);
+
+      // Initialize the first background image and dots
+      updateHeroImage();
+      updateDots();
+
+      // products
+
+      (function () {
+        const products = [
+          {
+            title: "Injectables",
+            bg: "from-purple-200 to-purple-300",
+            image: "https://pngimg.com/uploads/vaccine/vaccine_PNG38.png",
+          },
+          {
+            title: "Pediatric Oral",
+            bg: "from-blue-200 to-blue-300",
+            image: "https://pngimg.com/uploads/bottle/bottle_PNG2098.png",
+          },
+          {
+            title: "Vaccine",
+            bg: "from-green-200 to-green-300",
+            image: "https://pngimg.com/uploads/bottle/bottle_PNG2098.png",
+          },
+          {
+            title: "Pipeline",
+            bg: "from-yellow-200 to-yellow-300",
+            image: "https://pngimg.com/uploads/vaccine/vaccine_PNG38.png",
+          },
+        ];
+
+        function createCard(p) {
+          return `
+     <div class="relative h-[140px] sm:h-[160px] lg:h-[180px] 
+            rounded-2xl px-6 py-5 
+            bg-gradient-to-r ${p.bg} 
+            group border mb-10
+            flex items-center 
+            w-full max-w-[500px]">
+
+        <!-- LEFT CONTENT -->
+        <div class="z-10">
+          <h3 class="text-lg sm:text-xl italic font-semibold text-gray-800 mb-4">
+            ${p.title}
+          </h3>
+
+          <button class="bg-white/90 px-4 py-1.5 rounded-full text-sm flex items-center gap-2 shadow hover:gap-3 transition">
+            Explore →
+          </button>
+        </div>
+
+        <!-- IMAGE (RIGHT SIDE, BIGGER + OVERFLOW) -->
+        <img src="${p.image}" 
+             class="absolute right-[-10px] top-[-40px] 
+                    w-[140px] sm:w-[180px] lg:w-[190px] h-[190px] 
+                    object-contain z-50
+                    transition-transform duration-500 ease-out 
+                    group-hover:rotate-6 group-hover:scale-105"/>
+
+      </div>
+    `;
+        }
+
+        function renderProducts() {
+          const container = document.getElementById("productsContainer");
+          container.innerHTML = products.map(createCard).join("");
+        }
+
+        renderProducts();
+      })();
+
+      // testimonials
+      (function () {
+    const testimonials = [
+        {
+            name: "Dr. Sunita Nair",
+            role: "Head of Department",
+            image: "https://randomuser.me/api/portraits/women/44.jpg",
+            rating: "★★★★★",
+            text: "Novo Medi for consistent and high-quality supply of essential medicines across our hospital network.",
+        },
+        {
+            name: "Dr. Amit Mehta",
+            role: "Senior Consultant",
+            image: "https://randomuser.me/api/portraits/men/32.jpg",
+            rating: "★★★★☆",
+            text: "Novo Medi has consistently delivered reliable critical care formulations.",
+        },
+        {
+            name: "Dr. Rakesh Sharma",
+            role: "Cardiologist",
+            image: "https://randomuser.me/api/portraits/men/45.jpg",
+            rating: "★★★★★",
+            text: "Excellent service and timely delivery of critical medicines.",
+        },
+        {
+            name: "Dr. Priya Kapoor",
+            role: "Neurologist",
+            image: "https://randomuser.me/api/portraits/women/68.jpg",
+            rating: "★★★★★",
+            text: "Highly reliable partner for our medical supply needs.",
+        },
+    ];
+
+    function createCard(t) {
+        return `
+      <div class="bg-white rounded-2xl shadow p-4 sm:p-6 w-[280px] sm:w-[340px] lg:w-[400px] my-1 flex-shrink-0">
+        <div class="flex items-center gap-3 sm:gap-4 mb-3">
+          <img src="${t.image}" class="w-10 h-10 sm:w-14 sm:h-14 rounded-full border"/>
+          <div>
+            <h3 class="font-semibold text-base sm:text-lg">${t.name}</h3>
+            <p class="text-gray-500 text-xs sm:text-sm">${t.role}</p>
+            <div class="text-blue-600 text-sm">${t.rating}</div>
+          </div>
+        </div>
+        <p class="text-gray-600 text-sm sm:text-base">"${t.text}"</p>
+      </div>
+    `;
+    }
+
+    function renderRow(rowId, reverse = false) {
+        const row = document.getElementById(rowId);
+        if (!row) return;
+
+        // reverse for opposite direction row
+        const data = reverse ? [...testimonials].reverse() : testimonials;
+
+        // duplicate for seamless loop
+        const loopData = [...data, ...data];
+
+        row.innerHTML = loopData.map(createCard).join("");
+    }
+
+    // Render both rows
+    renderRow("row1", false); // left
+    renderRow("row2", true); // right (reverse)
+
+    // Pause and resume animation
+    window.pauseAnimation = function (rowId) {
+        const row = document.getElementById(rowId);
+        if (row) {
+            row.style.animationPlayState = 'paused';
+        }
+    }
+
+    window.resumeAnimation = function (rowId) {
+        const row = document.getElementById(rowId);
+        if (row) {
+            row.style.animationPlayState = 'running';
+        }
+    }
+})();
+      // Exhibition and events
+
+      (function () {
+        const events = [
+          {
+            title: "MahaPedicon in Kolhapur 2025",
+            image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0",
+            link: "#",
+          },
+          {
+            title: "Odipedicon 2025",
+            image:
+              "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+            link: "#",
+          },
+          {
+            title: "NCPR 2025 in Indore",
+            image:
+              "https://images.unsplash.com/photo-1540575467063-178a50c2df87",
+            link: "#",
+          },
+          {
+            title: "Medical Expo Delhi 2025",
+            image:
+              "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
+            link: "#",
+          },
+          {
+            title: "Healthcare Summit Mumbai",
+            image:
+              "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb",
+            link: "#",
+          },
+          {
+            title: "Global Pharma Meet 2025",
+            image:
+              "https://images.unsplash.com/photo-1581090700227-1e8a1c62a07f",
+            link: "#",
+          },
+          {
+            title: "International Medical Expo",
+            image:
+              "https://images.unsplash.com/photo-1530023367847-a683933f4172",
+            link: "#",
+          },
+        ];
+
+        function createCard(event) {
+          return `
+      <div class="relative min-w-[280px] sm:min-w-[400px] lg:min-w-[500px] h-[250px] sm:h-[300px] rounded-2xl overflow-hidden group flex-shrink-0 shadow-lg">
+
+        <img src="${event.image}" 
+             class="w-full h-full object-cover group-hover:scale-105 transition duration-500"/>
+
+        <div class="absolute inset-0 bg-black/40"></div>
+
+        <div class="absolute bottom-5 left-5 right-5 text-white">
+          <h3 class="text-lg sm:text-xl font-semibold mb-3">
+            ${event.title}
+          </h3>
+
+          <a href="${event.link}" 
+             class="inline-flex items-center gap-2 bg-blue-700 px-4 py-2 rounded-lg text-sm hover:bg-blue-800 transition">
+            View More →
+          </a>
+        </div>
+      </div>
+    `;
+        }
+
+        function renderEvents() {
+          const container = document.getElementById("eventsContainer");
+          container.innerHTML = events.map(createCard).join("");
+        }
+
+        renderEvents();
+
+        // 🔥 DRAG FUNCTIONALITY (Mouse + Touch)
+        const slider = document.getElementById("eventsContainer");
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+          isDown = true;
+          slider.classList.add("cursor-grabbing");
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("mouseleave", () => {
+          isDown = false;
+        });
+
+        slider.addEventListener("mouseup", () => {
+          isDown = false;
+        });
+
+        slider.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 1.5; // speed
+          slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support
+        slider.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].pageX;
+          scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("touchmove", (e) => {
+          const x = e.touches[0].pageX;
+          const walk = (x - startX) * 1.5;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+      })();
+
+      //Blogs
+
+      (function () {
+        const blogs = [
+          {
+            title:
+              "Zee Business: HerStory - Women Leaders Who Smashed the Glass Ceiling",
+            date: "09-Mar-2026",
+            image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0",
+            link: "#",
+          },
+          {
+            title:
+              "The Indian Practitioner: Novo Medi Sciences Launches NEXIPOX PLUS",
+            date: "19-Feb-2026",
+            image:
+              "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+            link: "#",
+          },
+          {
+            title:
+              "Indian Pharma Post: Novo Medi Sciences Unveils NEXIPOX PLUS",
+            date: "19-Feb-2026",
+            image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0",
+            link: "#",
+          },
+          {
+            title: "Business Standard: Healthcare Innovation in 2025",
+            date: "05-Feb-2026",
+            image:
+              "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+            link: "#",
+          },
+          {
+            title: "Medical Expo Insights: Future of Pharma Industry",
+            date: "28-Jan-2026",
+            image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0",
+            link: "#",
+          },
+          {
+            title: "Global Health Summit Coverage",
+            date: "15-Jan-2026",
+            image:
+              "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+            link: "#",
+          },
+        ];
+
+        function createCard(blog) {
+          return `
+      <div class="w-[430px] bg-white border rounded-2xl p-4 sm:p-5 flex-shrink-0 shadow-sm hover:shadow-md transition">
+
+        <!-- Image -->
+        <div class="border rounded-xl overflow-hidden mb-4">
+          <img src="${blog.image}" class="w-full h-[160px] object-cover"/>
+        </div>
+
+        <!-- Date -->
+        <div class="text-gray-500 text-sm mb-2 flex items-center gap-2">
+          📅 ${blog.date}
+        </div>
+
+        <!-- Title -->
+        <h3 class="font-semibold text-base sm:text-lg mb-3 text-gray-800 line-clamp-3">
+          ${blog.title}
+        </h3>
+
+        <!-- CTA -->
+        <a href="${blog.link}" 
+           class="text-blue-700 font-medium inline-flex items-center gap-2 hover:gap-3 transition">
+          View More →
+        </a>
+
+      </div>
+    `;
+        }
+
+        function renderBlogs() {
+          const container = document.getElementById("blogsContainer");
+          container.innerHTML = blogs.map(createCard).join("");
+        }
+
+        renderBlogs();
+
+        // 🔥 DRAG FUNCTIONALITY (same as previous)
+        const slider = document.getElementById("blogsContainer");
+
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener("mousedown", (e) => {
+          isDown = true;
+          startX = e.pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("mouseleave", () => (isDown = false));
+        slider.addEventListener("mouseup", () => (isDown = false));
+
+        slider.addEventListener("mousemove", (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - slider.offsetLeft;
+          const walk = (x - startX) * 1.5;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support
+        slider.addEventListener("touchstart", (e) => {
+          startX = e.touches[0].pageX;
+          scrollLeft = slider.scrollLeft;
+        });
+
+        slider.addEventListener("touchmove", (e) => {
+          const x = e.touches[0].pageX;
+          const walk = (x - startX) * 1.5;
+          slider.scrollLeft = scrollLeft - walk;
+        });
+      })();
+    </script>
+  </body>
+</html>

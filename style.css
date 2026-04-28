@@ -1,0 +1,61 @@
+/* HERO */
+.active-dot {
+  background-color: #0f62ac;
+}
+.inactive-dot {
+  background-color: #d1d5db;
+}
+
+#hero-section {
+  width: 100%;
+  height: 490px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-left {
+  animation: marquee-left 25s linear infinite;
+}
+
+.animate-right {
+  animation: marquee-right 25s linear infinite;
+}
+
+/* Pause on hover (optional) */
+.pause:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sidebar {
+  transition: transform 0.3s ease;
+}
